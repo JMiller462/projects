@@ -20,7 +20,8 @@ public class CoffeeAppGUITester extends JFrame {
 	private JTextField welcomeT;
 	private JButton order;
 	private JButton display;
-	private JPanel panel;
+	private JPanel menu;
+	private JTextField txtBytebucksMenu;
 
 	/**
 	 * Launch the application.
@@ -88,11 +89,21 @@ public class CoffeeAppGUITester extends JFrame {
 		display.setBorderPainted(false);
 		display.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 28));
 		
-		panel = new JPanel();
-		layerstart.setLayer(panel, 1);
-		panel.setBackground(new Color(255, 228, 196));
-		panel.setBounds(0, 0, 886, 663);
-		layerstart.add(panel);
+		menu = new JPanel();
+		layerstart.setLayer(menu, 1);
+		menu.setBackground(new Color(255, 228, 196));
+		menu.setBounds(0, 0, 886, 663);
+		layerstart.add(menu);
+		menu.setLayout(null);
+		
+		txtBytebucksMenu = new JTextField();
+		txtBytebucksMenu.setHorizontalAlignment(SwingConstants.CENTER);
+		txtBytebucksMenu.setFont(new Font("Papyrus", Font.PLAIN, 40));
+		txtBytebucksMenu.setText("ByteBucks Menu");
+		txtBytebucksMenu.setEditable(false);
+		txtBytebucksMenu.setBounds(153, 10, 490, 62);
+		menu.add(txtBytebucksMenu);
+		txtBytebucksMenu.setColumns(10);
 	
 	}
 }
