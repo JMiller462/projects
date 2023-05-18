@@ -1,4 +1,4 @@
-package hw4;
+package coffeeStore;
 
 public abstract class Coffee {
 private double price;

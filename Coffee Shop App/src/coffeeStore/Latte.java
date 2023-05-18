@@ -1,4 +1,4 @@
-package hw4;
+package coffeeStore;
 
 public class Latte extends Coffee {
 	public Latte(String name, double price, String des, String size) {

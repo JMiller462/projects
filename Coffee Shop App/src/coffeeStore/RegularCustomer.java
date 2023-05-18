@@ -1,4 +1,4 @@
-package hw4;
+package coffeeStore;
 
 import java.util.ArrayList;
 
