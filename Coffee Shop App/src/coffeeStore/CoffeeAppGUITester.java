@@ -13,6 +13,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLayeredPane;
 import javax.swing.SwingConstants;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JSpinner;
 
 public class CoffeeAppGUITester extends JFrame {
 
@@ -22,6 +25,8 @@ public class CoffeeAppGUITester extends JFrame {
 	private JButton display;
 	private JPanel menu;
 	private JTextField txtBytebucksMenu;
+	private JTextField txtRegularBrewedCoffee;
+	private JTextField txtEspresso;
 
 	/**
 	 * Launch the application.
@@ -54,6 +59,7 @@ public class CoffeeAppGUITester extends JFrame {
 		layerstart.setLayout(null);
 		
 		JPanel opening = new JPanel();
+		layerstart.setLayer(opening, 0);
 		opening.setBackground(new Color(255, 228, 196));
 		opening.setBounds(0, 0, 886, 663);
 		layerstart.add(opening);
@@ -97,6 +103,8 @@ public class CoffeeAppGUITester extends JFrame {
 		menu.setLayout(null);
 		
 		txtBytebucksMenu = new JTextField();
+		txtBytebucksMenu.setBackground(new Color(255, 228, 196));
+		txtBytebucksMenu.setForeground(new Color(160, 82, 45));
 		txtBytebucksMenu.setHorizontalAlignment(SwingConstants.CENTER);
 		txtBytebucksMenu.setFont(new Font("Papyrus", Font.PLAIN, 40));
 		txtBytebucksMenu.setText("ByteBucks Menu");
@@ -104,6 +112,38 @@ public class CoffeeAppGUITester extends JFrame {
 		txtBytebucksMenu.setBounds(153, 10, 490, 62);
 		menu.add(txtBytebucksMenu);
 		txtBytebucksMenu.setColumns(10);
-	
+		
+		txtRegularBrewedCoffee = new JTextField();
+		txtRegularBrewedCoffee.setFont(new Font("Papyrus", Font.PLAIN, 20));
+		txtRegularBrewedCoffee.setText("Regular Brewed Coffee");
+		txtRegularBrewedCoffee.setHorizontalAlignment(SwingConstants.CENTER);
+		txtRegularBrewedCoffee.setBounds(10, 140, 233, 54);
+		menu.add(txtRegularBrewedCoffee);
+		txtRegularBrewedCoffee.setColumns(10);
+		
+		JTextArea brCofdes = new JTextArea();
+		brCofdes.setFont(new Font("Microsoft YaHei UI Light", Font.PLAIN, 11));
+		brCofdes.setText("The by-the-numbers cup of brewed joe that will \r\nalways start your days strong. \r\n(No espresso)");
+		brCofdes.setBounds(0, 195, 241, 62);
+		menu.add(brCofdes);
+		
+		txtEspresso = new JTextField();
+		txtEspresso.setFont(new Font("Papyrus", Font.PLAIN, 20));
+		txtEspresso.setText("Espresso");
+		txtEspresso.setHorizontalAlignment(SwingConstants.CENTER);
+		txtEspresso.setBounds(312, 144, 177, 46);
+		menu.add(txtEspresso);
+		txtEspresso.setColumns(10);
+		
+		JTextArea txtrThePerfectEspresso = new JTextArea();
+		txtrThePerfectEspresso.setText("The perfect espresso to give you \r\nrejuvenating energy without fail.\r\n(1-2 shots of espresso)");
+		txtrThePerfectEspresso.setFont(new Font("Microsoft YaHei UI Light", Font.PLAIN, 11));
+		txtrThePerfectEspresso.setBounds(312, 195, 174, 54);
+		menu.add(txtrThePerfectEspresso);
+		
+		JSpinner spinner = new JSpinner();
+		spinner.setBounds(199, 277, 30, 20);
+		menu.add(spinner);
+		
 	}
 }

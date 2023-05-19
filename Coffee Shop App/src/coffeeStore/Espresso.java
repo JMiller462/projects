@@ -2,9 +2,9 @@ package coffeeStore;
 
 public class Espresso extends Coffee{
 
-	public Espresso( String name, double price, String des, String size) {
+	public Espresso( String name, double price,  String size) {
 
-	super(name, price, des, size);
+	super(name, price, size);
 }
 	public String prepare() {
 		String prep = "";
@@ -19,7 +19,8 @@ public class Espresso extends Coffee{
 		 prep = "Grounding freshly roasted coffee beans... \n" +
 				" Preparing Espresso with grounded beans via machine...\n"+
 				"Adding 1 shot of Espresso.../n"+
-				"Adding signature ByteBucks Cream...";
+				"Adding signature ByteBucks C"
+				+ "ream...";
 		}
 	return prep;
 	}

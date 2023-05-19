@@ -2,8 +2,8 @@ package coffeeStore;
 
 public class RegularCoffee extends Coffee {
 
-public RegularCoffee(String name , double price, String des, String size) {
-	super(name, price, des, size);
+public RegularCoffee(String name , double price, String size) {
+	super(name, price, size);
 }
 
 

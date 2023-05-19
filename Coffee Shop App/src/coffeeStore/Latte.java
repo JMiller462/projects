@@ -1,8 +1,8 @@
 package coffeeStore;
 
 public class Latte extends Coffee {
-	public Latte(String name, double price, String des, String size) {
-		super(name, price, des, size);
+	public Latte(String name, double price, String size) {
+		super(name, price, size);
 	}
 	public String prepare(){ 
 		String prep = "";

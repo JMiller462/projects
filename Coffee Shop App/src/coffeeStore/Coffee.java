@@ -3,18 +3,26 @@ package coffeeStore;
 public abstract class Coffee {
 private double price;
 private String name;
-private String description;
+private static int cofCount = 0;
 private String size;
-public Coffee(String name, double price, String des, String size) {
+public Coffee(String name, double price, String size) {
+	cofCount ++;
 	this.name = name;
 	this.price = price;
-	this.description = des;
 	this.size = size;
 	
 }
 
 public String getSize() {
 	return size;
+}
+
+public static int getCofCount() {
+	return cofCount;
+}
+
+public static void setCofCount(int cofCount) {
+	Coffee.cofCount = cofCount;
 }
 
 public void setSize(String size) {
@@ -38,14 +46,6 @@ public String getName() {
 
 public void setName(String name) {
 	this.name = name;
-}
-
-public String getDescription() {
-	return description;
-}
-
-public void setDescription(String description) {
-	this.description = description;
 }
 
 }
