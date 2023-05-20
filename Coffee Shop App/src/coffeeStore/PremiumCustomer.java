@@ -13,47 +13,57 @@ public class PremiumCustomer extends Customer {
 		setPriceTotal(getPriceTotal() - dis);
 	}
 	public String toString() {
-		ArrayList <String> strOrders = new ArrayList();
-		int numReg = 0;
-		int numesp = 0;
-		int numlat = 0;
-		int numMoc = 0;
-		int numCap = 0;
-		int total = 0;
 		
-		for(Coffee coffee :this.orders) {
-			if(coffee instanceof RegularCoffee) {
-				numReg ++;
-			}
-			else if( coffee instanceof Espresso) {
-				numesp ++;
-			}
-			else if(coffee instanceof Latte) {
-				numlat++;
-			}
-			else if(coffee instanceof Mocha) {
-				numMoc++;
-			}
-			else if(coffee instanceof Cappuccino) {
-				numCap++;
-			}
+		ArrayList <String> strOrders = new ArrayList<>();
+		
+		if(RegularCoffee.getCofSmallCount() > 0) {
+			strOrders.add(RegularCoffee.getCofSmallCount() + "x Small  Brewed Coffee" );
 		}
-		if(numReg > 0) {
-			strOrders.add(numReg + "x Regular Brewed Coffee" );
+		if(RegularCoffee.getMedcofCount() > 0) {
+			strOrders.add(RegularCoffee.getMedcofCount() + "x Medium Brewed Coffee" );
 		}
-		if(numesp > 0) {
-			strOrders.add(numesp + "x Espresso" );
+		if(RegularCoffee.getLargecofCount() > 0) {
+			strOrders.add(RegularCoffee.getLargecofCount() + "x Large Brewed Coffee" );
 		}
-		if(numlat > 0) {
-			strOrders.add(numlat + "x Latte" );
+		if(Espresso.getEspSmallCount() > 0) {
+			strOrders.add(Espresso.getEspSmallCount() + "x Small Espresso" );
 		}
-		if(numMoc > 0) {
-			strOrders.add(numMoc + "x Mocah" );
+		if(Espresso.getMedespCount() > 0) {
+			strOrders.add(Espresso.getMedespCount() + "x Medium Espresso" );
 		}
-		if(numCap > 0) {
-			strOrders.add(numReg + "x Cappuccino " );
+		if(Espresso.getLargeespCount() > 0) {
+			strOrders.add(Espresso.getLargeespCount() + "x Large Espresso" );
 		}
-		return "Type: Regular Customer, Name: " + getName() + ", Phone Number: " + getPhoneNumber() + ", Order Price Total: " + getPriceTotal() + ", Number of Orders: " + total + ", \nOrders Made: " + strOrders;
+		
+		if(Cappuccino.getSmallCapCount() > 0) {
+			strOrders.add(Cappuccino.getSmallCapCount() + "x Small Cappuccino" );
+		}
+		if(Cappuccino.getMedcapCount() > 0) {
+			strOrders.add(Cappuccino.getMedcapCount() + "x Medium Cappuccino" );
+		}
+		if(Cappuccino.getLargecapCount() > 0) {
+			strOrders.add(Cappuccino.getLargecapCount() + "x Large Cappuccino" );
+		}
+		
+		if(Latte.getsmallLatCount() > 0) {
+			strOrders.add(Latte.getsmallLatCount() + "x Small Latte" );
+		}
+		if(Latte.getMedlatCount() > 0) {
+			strOrders.add(Latte.getMedlatCount() + "x Medium Latte" );
+		}
+		if(Latte.getLargelatCount() > 0) {
+			strOrders.add(Latte.getLargelatCount() + "x Large Latte" );
+		}
+		if(Mocha.getMochSmallCount() > 0) {
+			strOrders.add(Mocha.getMochSmallCount() + "x Small Mocha" );
+		}
+		if(Mocha.getMedmochCount() > 0) {
+			strOrders.add(Mocha.getMedmochCount() + "x Medium Mocha" );
+		}
+		if(Mocha.getLargemochCount() > 0) {
+			strOrders.add(Mocha.getLargemochCount()+ "x Large Mocha" );
+		}
+		return "Type: Regular Customer, Name: " + getName() + ", Phone Number: " + getPhoneNumber() + ", Order Price Total: " + getPriceTotal() + ", Number of Orders: " + orders.size() + ", /nOrders Made: " + strOrders;
 	}
 
 }

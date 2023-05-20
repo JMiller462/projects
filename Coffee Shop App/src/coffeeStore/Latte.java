@@ -16,10 +16,10 @@ public class Latte extends Coffee {
 			largelatCount ++;
 		}
 	}
-	public static int getLatCount() {
+	public static int getsmallLatCount() {
 		return smalllatCount;
 	}
-	public static void setLatCount(int latCount) {
+	public static void setsmallLatCount(int latCount) {
 		Latte.smalllatCount = latCount;
 	}
 	
