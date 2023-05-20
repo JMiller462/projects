@@ -9,34 +9,14 @@ public class RegularCustomer extends Customer {
 
 public String toString() {
 	ArrayList <String> strOrders = new ArrayList();
-	int numReg = 0;
-	int numesp = 0;
-	int numlat = 0;
-	int numMoc = 0;
-	int numCap = 0;
-	int total = 0;
 	
 	for(Coffee coffee :this.orders) {
-		if(coffee instanceof RegularCoffee) {
-			numReg ++;
-		}
-		else if( coffee instanceof Espresso) {
-			numesp ++;
-		}
-		else if(coffee instanceof Latte) {
-			numlat++;
-		}
-		else if(coffee instanceof Mocha) {
-			numMoc++;
-		}
-		else if(coffee instanceof Cappuccino) {
-			numCap++;
-		}
+		
+	if(RegularCoffee.getCofSmallCount() > 0) {
+		strOrders.add(RegularCoffee.getCofSmallCount() + "x Regular Brewed Coffee" );
 	}
-	if(numReg > 0) {
-		strOrders.add(numReg + "x Regular Brewed Coffee" );
-	}
-	if(numesp > 0) {
+	
+	if(Espresso.getEspSmallCount() > 0) {
 		strOrders.add(numesp + "x Espresso" );
 	}
 	if(numlat > 0) {
@@ -47,6 +27,7 @@ public String toString() {
 	}
 	if(numCap > 0) {
 		strOrders.add(numReg + "x Cappuccino " );
+	}
 	}
 	return "Type: Regular Customer, Name: " + getName() + ", Phone Number: " + getPhoneNumber() + ", Order Price Total: " + getPriceTotal() + ", Number of Orders: " + total + ", \nOrders Made: " + strOrders;
 }

@@ -1,8 +1,26 @@
 package coffeeStore;
 
 public class Cappuccino extends Coffee {
-public Cappuccino(String name, double price, String des, String size) {
-	super(name, price, des, size);
+private static int smallcapCount = 0;
+private static int medcapCount = 0;
+private static int largecapCount = 0;
+public Cappuccino(String name, double price, String size) {
+	super(name, price, size);
+	if(this.getSize().equals("Small")) {
+		smallcapCount ++;
+	}
+	if(this.getSize().equals("Medium")) {
+		medcapCount ++;
+	}
+	if(this.getSize().equals("Large")) {
+		largecapCount ++;
+	}
+}
+public static int getSmallCapCount() {
+	return smallcapCount;
+}
+public static void setSmallCapCount(int capCount) {
+	Cappuccino.smallcapCount = capCount;
 }
 public String prepare(){ 
 	String prep = "";
@@ -25,5 +43,17 @@ public String prepare(){
 		
 	}
 return prep;
+}
+public static int getMedcapCount() {
+	return medcapCount;
+}
+public static void setMedcapCount(int medcapCount) {
+	Cappuccino.medcapCount = medcapCount;
+}
+public static int getLargecapCount() {
+	return largecapCount;
+}
+public static void setLargecapCount(int largecapCount) {
+	Cappuccino.largecapCount = largecapCount;
 }
 }
