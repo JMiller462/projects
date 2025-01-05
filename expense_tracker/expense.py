@@ -2,7 +2,7 @@ from datetime import date
 class Expense:
     obj_counter = 0
     def __init__(self, amount, d, cat):
-        self.amount = amount
+        self.amount = int(amount)
         self.date = date(int(d[0:4]),int(d[5:7]),int(d[8:]))
         self.category = cat
         Expense.obj_counter += 1
@@ -11,7 +11,7 @@ class Expense:
     def edit(self, new_amount, new_date, new_cat):
         self.amount = new_amount
         self.date = new_date
-        self.cat = new_cat
+        self.category = new_cat
         
 
     def toString(self):
