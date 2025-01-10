@@ -1,17 +1,36 @@
 
 from datetime import date
 import calendar
+import random
 class ExpenseList:
-    #categories = {"Food","Transportation", "Housing", "Healthcare","Misc."
     def __init__(self):
         self.list = []
         self.categories = set()
-    
+        self.IDs = dict()
+        self.ran_ids = random.sample(range(0,1001), 1000)
+        for id in self.ran_ids:
+            self.IDs[id] = 0
+
     def add(self,expense):
+        for id in self.IDs: 
+            if self.IDs[id] == 0:
+                expense.ID = id
+        self.IDs[expense.ID] = 1 #verification check from new system of storing expenses when testing delete function
         self.list.append(expense)
         self.categories.add(expense.category)
-    #def delete():
-        
+
+    def delete(self,expense, d_index):
+        check = 0
+        for i in range(len(self.list)):
+            if expense.category == self.list[i].category and expense is not self.list[i]:
+                break
+            if i == len(self.list)-1:
+                check = 1
+        if check == 1:
+            self.categories.remove(expense.category)
+        self.IDs[self.list[d_index].ID] = 0
+        del self.list[d_index]
+
     def cat_sum(self,cat):
         total = 0
         for e in self.list:

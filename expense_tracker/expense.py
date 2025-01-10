@@ -5,17 +5,16 @@ class Expense:
         self.amount = int(amount)
         self.date = date(int(d[0:4]),int(d[5:7]),int(d[8:]))
         self.category = cat
-        Expense.obj_counter += 1
-        self.counter = Expense.obj_counter
+        self.ID = None
 
     def edit(self, new_amount, new_date, new_cat):
-        self.amount = new_amount
+        self.amount = int(new_amount)
         self.date = new_date
         self.category = new_cat
         
 
     def toString(self):
-        print("Order:", self.counter, "Amount: $", self.amount, "Date:", self.date, " Category:" , self.category)
+        print("ID:", self.ID, "Amount: $", self.amount, "Date:", self.date, " Category:" , self.category)
 
         
     
